@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Client } from '../client'
 import { ClientService } from '../client.service'
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-client-list',
@@ -19,9 +20,13 @@ export class ClientListComponent implements OnInit {
 
 private getClients(){
   this.clientService.getClientList().subscribe(data=>{
-    this.clients= data ;
-  });
-}
+    this.clients = data;
+  }),
+  (error: HttpErrorResponse) => {
+    alert (error.message);
+  }
+
+};
 
 
 }

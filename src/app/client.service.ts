@@ -14,4 +14,13 @@ export class ClientService {
   getClientList(): Observable<Client[]>{
     return this.httpClient.get<Client[]>(`${this.baseURL}`);
   }
+  
+  createClient(client: Client): Observable<Object>{
+     return this.httpClient.post(`${this.baseURL}`,client);
+
+  }
+
+
+
+
 }
