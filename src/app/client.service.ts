@@ -8,19 +8,37 @@ import { Client } from './client';
 })
 export class ClientService {
   
-  private baseURL = "http://localhost:8080/api/v1/getAll";
+  private baseURL = "http://localhost:8080/";
   constructor(private httpClient: HttpClient) { }
 
   getClientList(): Observable<Client[]>{
-    return this.httpClient.get<Client[]>(`${this.baseURL}`);
+    let u=this.baseURL+'api/v1/getAll'
+    
+    return this.httpClient.get<Client[]>(`${u}`);
   }
   
-  createClient(client: Client): Observable<Object>{
-     return this.httpClient.post(`${this.baseURL}`,client);
+  createClient(client: Client): Observable<object>{
+    let u=this.baseURL+'api/v1/getAll'
+
+     return this.httpClient.post(`${u}`,client);
 
   }
 
+  getClientById(id: number): Observable<Client>{
+    let u=this.baseURL+'api/v1/client'
+    
+    return this.httpClient.get<Client>(`${u}/${id}`);
+  }
 
+  updateClient(id: number, client: Client): Observable<Object>{
+    let u=this.baseURL+'api/v1/client'
+    return this.httpClient.put(`${u}/${id}`, client);
+  }
+
+  deleteClient(id: number): Observable<Object>{
+    let u=this.baseURL+'api/v1/client'
+    return this.httpClient.delete(`${u}/${id}`);
+  }
 
 
 }

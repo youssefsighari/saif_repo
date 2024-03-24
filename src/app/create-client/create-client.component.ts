@@ -10,31 +10,28 @@ import { Router } from '@angular/router';
 })
 
 
-export class CreateClientComponent implements OnInit{
+export class CreateClientComponent implements OnInit {
 
   client: Client = new Client();
   constructor(private clientService: ClientService,
-    private router: Router){ }
+    private router: Router) { }
 
   ngOnInit(): void {
-      
   }
-    
-saveClient(){
-  this.clientService.createClient(this.client).subscribe( data =>{
-    console.log(data);
-    this.goToClientList();
-  },
-  error => console.log(error)
 
-  );
-}
+  saveClient() {
+    this.clientService.createClient(this.client).subscribe(data => {
+      console.log(data);
+      this.goToClientList();
+    },
+      error => console.log(error));
+  }
 
-goToClientList(){
-this.router.navigate(['/clients']);
-}
+  goToClientList() {
+    this.router.navigate(['/clients']);
+  }
 
-  onSubmit(){
+  onSubmit() {
     console.log(this.client)
     this.saveClient();
 
