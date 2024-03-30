@@ -8,7 +8,10 @@ import { CreateClientComponent } from './create-client/create-client.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateClientComponent } from './update-client/update-client.component';
 import { ClientDetailsComponent } from './client-details/client-details.component';
-import { LoginComponent } from './login/login.component'
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { AuthComponent } from './services/auth/auth.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { LoginComponent } from './login/login.component'
     CreateClientComponent,
     UpdateClientComponent,
     ClientDetailsComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    AuthComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

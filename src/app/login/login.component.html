@@ -1,20 +1,22 @@
+<div class="container mt-4" >
+    <div class="card">
+        <h1>Employee Login</h1>
+<form>
+
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email"  placeholder="Enter Email">
+      </div>
+
+      <div class="form-group">
+        <label>Paaword</label>
+        <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control" id="password" class="form-control" placeholder="Enter Password">
+      </div>
+
+     <button type="submit" class="btn btn-primary" (click)="Login()">Login</button>
 
 
-<div class="container col-md-6">
-    <h1 style="color: red;">user login </h1>
-    <form (ngSubmit)="adminLogin()">
-
-<div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">admin name</label>
-    <input type="text" [(ngModel)]="admin.name" class ="form-control" id="name" name="name">
+  </form>
 </div>
-
-<div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">password</label>
-    <input type="password" [(ngModel)]="admin.password" class ="form-control" id ="password" name="password">
-</div>
-<button type="submit" class="btn btn-primary">Login</button>
-
-</form>
 
 </div>
